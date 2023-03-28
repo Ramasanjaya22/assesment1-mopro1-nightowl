@@ -15,7 +15,7 @@ class NoteActivity : AppCompatActivity() {
         binding = ActivityNoteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        binding.rgMood.check(R.id.rb_happy)
         binding.rgMood.setOnCheckedChangeListener setOnClickListener@{ _, checkedId ->
             mood = when (checkedId) {
                 R.id.rb_happy -> "😊"
