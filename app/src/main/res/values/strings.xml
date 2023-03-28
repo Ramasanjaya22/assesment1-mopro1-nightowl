@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">NightOwl</string>
+    <string name="title">Set alarm Waktu Tidur 💤</string>
+    <string name="btn_set_alarm">Set Alarm</string>
+    <string name="btn_buatCatatan">+ Buat Catatan</string>
     <string name="history_title">History Catatan</string>
     <string name="empty_history_message">Tidak ada catatan</string>
     <string name="mood">Mood: 😊</string>
@@ -14,4 +17,6 @@
     <string name="note_activity">Activity: %s</string>
     <string name="note_food">Food: %s</string>
     <string name="note_note">Note: %s</string>
+    <string name="title_add_note">Tambah Catatan 📚</string>
+
 </resources>

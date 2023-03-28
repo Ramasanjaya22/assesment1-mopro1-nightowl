@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true"
+    android:padding="20dp">
+
+<LinearLayout
     android:id="@+id/ll_note"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
 
     <TextView
+        android:id="@+id/tv_add_note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_add_note"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_mood"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,69 +31,79 @@
         android:id="@+id/rg_mood"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="center">
 
         <RadioButton
             android:id="@+id/rb_happy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="😊" />
+            android:layout_weight="1"
+            android:text="Senang😊" />
 
         <RadioButton
             android:id="@+id/rb_sad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="😢" />
+            android:layout_weight="1"
+            android:text="Sedih😢" />
 
         <RadioButton
             android:id="@+id/rb_angry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="😠" />
+            android:layout_weight="1"
+            android:text="Marah😠" />
 
         <RadioButton
             android:id="@+id/rb_flat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="😐" />
+            android:layout_weight="1"
+            android:text="Biasa😐" />
 
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/tv_activity"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Aktivitas Sebelum Tidur" />
+        android:hint="Aktivitas Kamu Sebelum Tidur">
 
-    <EditText
-        android:id="@+id/et_activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"/>
 
-    <TextView
-        android:id="@+id/tv_food"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Konsumsi Makanan Sebelum Tidur" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/et_food"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp" />
 
-    <TextView
-        android:id="@+id/tv_note"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Catatan Sebelum Tidur" />
+        android:hint="Konsumsi Makanan">
 
-    <EditText
-        android:id="@+id/et_note"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="48dp" />
+        android:hint="Catatan Sebelum Tidur">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_save"
@@ -86,3 +112,4 @@
         android:text="Simpan" />
 
 </LinearLayout>
+</ScrollView>

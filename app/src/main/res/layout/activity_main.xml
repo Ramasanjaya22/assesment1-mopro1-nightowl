@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true"
+    android:padding="20dp"
+    android:scrollbars="none">
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    >
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pengaturan Waktu Tidur"
+        android:text="@string/title"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
@@ -20,23 +28,21 @@
         android:id="@+id/timePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:timePickerMode="spinner" />
+        android:layout_gravity="center_horizontal"
+        android:timePickerMode="spinner"
+        android:background="@drawable/rounded_timepicker_bg"
+        />
 
     <Button
         android:id="@+id/btnSetAlarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/timePicker"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Set Alarm" />
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:text="@string/btn_set_alarm"
+        />
 
-    <Button
-        android:id="@+id/btn_create_note"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buat Catatan" />
+
 
     <TextView
         android:id="@+id/tv_history_title"
@@ -45,6 +51,13 @@
         android:text="@string/history_title"
         android:textAlignment="center"
         android:textSize="24sp" />
+    <Button
+        android:id="@+id/btn_create_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:text="@string/btn_buatCatatan" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_note_list"
@@ -62,3 +75,4 @@
         android:visibility="gone" />
 
 </LinearLayout>
+</ScrollView>
