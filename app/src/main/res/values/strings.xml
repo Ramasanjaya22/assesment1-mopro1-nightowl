@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">NightOwl</string>
+    <string name="history_title">History Catatan</string>
+    <string name="empty_history_message">Tidak ada catatan</string>
+    <string name="mood">Mood: 😊</string>
+    <string name="aktivitas_sebelum_tidur_mengambil_wudhu">Aktivitas Sebelum Tidur: Mengambil Wudhu</string>
+    <string name="konsumsi_makanan">Konsumsi Makanan Sebelum Tidur: Tidak makan</string>
+    <string name="catatan_sebelum_tidur_nberdoa_sebelum_tidur">📃 Catatan Sebelum Tidur: \nBerdoa sebelum tidur</string>
+    <string name="preference_file_key" />
+    <string name="saved_notes_key" />
+
+    //note history
+    <string name="note_mood">Mood: %s</string>
+    <string name="note_activity">Activity: %s</string>
+    <string name="note_food">Food: %s</string>
+    <string name="note_note">Note: %s</string>
 </resources>

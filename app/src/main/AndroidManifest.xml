@@ -25,6 +25,9 @@
 
         </activity>
         <receiver android:name=".AlarmReceiver" />
+
+        <activity android:name=".NoteActivity" />
+        <activity android:name=".HistoryActivity" />
     </application>
 
 </manifest>
