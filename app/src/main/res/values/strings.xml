@@ -18,5 +18,7 @@
     <string name="note_food">🍉Food: %s</string>
     <string name="note_note">📚Note: %s</string>
     <string name="title_add_note">Tambah Catatan 📚</string>
+    <string name="sleep_well_desc">Jaga kualitas tidurmu dengan NightOwl - Aplikasi Pengatur Waktu Tidur.</string>
+    <string name="title_nightowl">NightOwl</string>
 
 </resources>

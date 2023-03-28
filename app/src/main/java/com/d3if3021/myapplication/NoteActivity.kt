@@ -15,7 +15,8 @@ class NoteActivity : AppCompatActivity() {
         binding = ActivityNoteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.rgMood.setOnCheckedChangeListener { _, checkedId ->
+        binding.rgMood.check(R.id.rb_happy)
+        binding.rgMood.setOnCheckedChangeListener setOnClickListener@{ _, checkedId ->
             mood = when (checkedId) {
                 R.id.rb_happy -> "😊"
                 R.id.rb_sad -> "😢"
@@ -25,10 +26,27 @@ class NoteActivity : AppCompatActivity() {
             }
         }
 
+
         binding.btnSave.setOnClickListener {
             val activity = binding.etActivity.text.toString().trim()
             val food = binding.etFood.text.toString().trim()
             val note = binding.etNote.text.toString().trim()
+
+            // validasi inputan
+            if (activity.isEmpty()) {
+                binding.etActivity.error = "Activity must not be empty"
+                return@setOnClickListener
+            }
+
+            if (food.isEmpty()) {
+                binding.etFood.error = "Food must not be empty"
+                return@setOnClickListener
+            }
+
+            if (note.isEmpty()) {
+                binding.etNote.error = "Note must not be empty"
+                return@setOnClickListener
+            }
 
             val data = Note(
                 mood = mood,
@@ -42,5 +60,6 @@ class NoteActivity : AppCompatActivity() {
             setResult(RESULT_OK, intent)
             finish()
         }
+
     }
 }
