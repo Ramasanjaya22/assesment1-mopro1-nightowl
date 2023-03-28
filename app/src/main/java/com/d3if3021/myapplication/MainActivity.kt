@@ -15,18 +15,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.d3if3021.myapplication.databinding.ActivityMainBinding
 import java.util.*
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var noteAdapter: NoteAdapter
     private var dataList = mutableListOf<Note>()
-    // generate dummy data
-    private val dummyNotes = listOf(
-        Note("\uD83D\uDE0A", "Makan", "Nasi Goreng", "Hari ini sangat menyenangkan."),
-        Note("\uD83D\uDE22", "Belajar", "Kue", "Sulitnya belajar membuat saya sedih."),
-        Note("\uD83D\uDE0A", "Bermain", "Pisang Goreng", "Bermain bersama teman sangat menyenangkan.")
-    )
-
 
     @SuppressLint("NotifyDataSetChanged")
     @RequiresApi(Build.VERSION_CODES.M)
@@ -35,18 +29,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         // Setup RecyclerView
-        // add dummy data to dataList
-        dataList.addAll(dummyNotes)
         noteAdapter = NoteAdapter(dataList)
-
         binding.rvNoteList.layoutManager = LinearLayoutManager(this)
         binding.rvNoteList.adapter = noteAdapter
-
         updateUI()
-// tell the adapter to update the data
         noteAdapter.notifyDataSetChanged()
+
+
         // Setup set alarm button
         binding.btnSetAlarm.setOnClickListener {
             // Get user selected sleep time
@@ -88,30 +78,20 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-    private fun generateDummyData(): List<Note> {
-        val dummyNotes = mutableListOf<Note>()
-
-        // Add dummy notes
-        dummyNotes.add( Note("😊", "Belajar Kotlin", "Nasi Goreng", "Belajar Kotlin sangat menyenangkan."))
-        dummyNotes.add(Note("😢", "Mengerjakan Tugas", "Mie Instan", "Tugasnya sangat sulit, membuat saya sedih."))
-        dummyNotes.add(Note("😐", "Browsing Internet", "Kopi", "Biasa saja."))
-        dummyNotes.add(Note("😠", "Berkendara di Kemacetan", "Roti Bakar", "Kemacetannya sangat mengganggu, membuat saya kesal."))
-
-        return dummyNotes
-    }
-
-
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == 1 && resultCode == RESULT_OK) {
-            val newNote = data?.getSerializableExtra("note_data") as Note
-            dataList.add(0, newNote)
-            updateUI()
+            val newNote = data?.getSerializableExtra("note_data") as? Note
+            newNote?.let {
+                dataList.add(0, it)
+                updateUI()
+            }
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun updateUI() {
         if (dataList.isEmpty()) {
             binding.rvNoteList.visibility = View.GONE

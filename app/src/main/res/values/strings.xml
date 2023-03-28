@@ -13,10 +13,10 @@
     <string name="saved_notes_key" />
 
     //note history
-    <string name="note_mood">Mood: %s</string>
-    <string name="note_activity">Activity: %s</string>
-    <string name="note_food">Food: %s</string>
-    <string name="note_note">Note: %s</string>
+    <string name="note_mood">Mood Kamu: %s</string>
+    <string name="note_activity">🏊Activity: %s</string>
+    <string name="note_food">🍉Food: %s</string>
+    <string name="note_note">📚Note: %s</string>
     <string name="title_add_note">Tambah Catatan 📚</string>
 
 </resources>

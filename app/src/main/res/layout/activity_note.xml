@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     android:layout_height="match_parent"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_add_note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_add_note"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <ScrollView
+    android:layout_height="0dp"
+    android:layout_width="match_parent"
+    android:layout_weight="1"
     android:fillViewport="true"
-    android:padding="20dp">
+    android:padding="20dp"
+    >
 
 <LinearLayout
     android:id="@+id/ll_note"
@@ -13,13 +27,7 @@
     android:orientation="vertical"
     >
 
-    <TextView
-        android:id="@+id/tv_add_note_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_add_note"
-        android:textAlignment="center"
-        android:textSize="24sp" />
+
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_mood"
@@ -113,3 +121,4 @@
 
 </LinearLayout>
 </ScrollView>
+</LinearLayout>
