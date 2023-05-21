@@ -34,13 +34,14 @@ class NoteFragment : Fragment() {
         noteViewModel = ViewModelProvider(this, NoteViewModelFactory(repository))[NoteViewModel::class.java]
 
         binding.rgMood.check(R.id.rb_happy)
+        var mood = "😊" // Default value for rb_happy
+
         binding.rgMood.setOnCheckedChangeListener { _, checkedId ->
             mood = when (checkedId) {
-                R.id.rb_happy -> "😊"
                 R.id.rb_sad -> "😢"
                 R.id.rb_angry -> "😠"
                 R.id.rb_flat -> "😐"
-                else -> ""
+                else -> "😊"
             }
         }
         binding.btnSave.setOnClickListener {

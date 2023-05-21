@@ -12,6 +12,7 @@
     <string name="catatan_sebelum_tidur_nberdoa_sebelum_tidur">📃 Catatan Sebelum Tidur: \nBerdoa sebelum tidur</string>
     <string name="preference_file_key" />
     <string name="saved_notes_key" />
+    <string name="switch_layout">Ubah tampilan</string>
 
     //note history
     <string name="note_mood">Mood Kamu: %s</string>
