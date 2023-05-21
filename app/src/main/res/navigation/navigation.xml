@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/jamFragment">
+
+    <fragment
+        android:id="@+id/jamFragment"
+        android:name="com.d3if3021.myapplication.ui.JamFragment"
+        android:label="fragment_jam"
+        tools:layout="@layout/fragment_jam" >
+        <action
+            android:id="@+id/action_jamFragment_to_saranFragment"
+            app:destination="@id/saranFragment" />
+        <action
+            android:id="@+id/action_jamFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_jamFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saranFragment"
+        android:name="com.d3if3021.myapplication.ui.saranScreen.SaranFragment"
+        android:label="SaranFragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.d3if3021.myapplication.ui.aboutScreen.AboutFragment"
+        android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.d3if3021.myapplication.ui.noteScreen.NoteFragment"
+        android:label="NoteFragment" />
+
+</navigation>

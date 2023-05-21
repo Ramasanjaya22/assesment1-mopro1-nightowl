@@ -2,6 +2,7 @@
     <string name="app_name">NightOwl</string>
     <string name="title">Set alarm Waktu Tidur 💤</string>
     <string name="btn_set_alarm">Set Alarm</string>
+    <string name="btn_saran">saran Tidur 🛏️</string>
     <string name="btn_buatCatatan">+ Buat Catatan</string>
     <string name="history_title">History Catatan</string>
     <string name="empty_history_message">Tidak ada catatan</string>
@@ -20,5 +21,9 @@
     <string name="title_add_note">Tambah Catatan 📚</string>
     <string name="sleep_well_desc">Jaga kualitas tidurmu dengan NightOwl - Aplikasi Pengatur Waktu Tidur.</string>
     <string name="title_nightowl">NightOwl</string>
-
+    <string name="saran_tidur">Untuk mendapatkan tidur yang berkualitas, penting untuk menciptakan lingkungan tidur yang nyaman dan tenang, menjaga rutinitas tidur yang konsisten, serta menghindari stimulan seperti kafein dan gadget sebelum tidur. Selain itu, menjaga pola makan yang sehat dan aktif secara fisik juga dapat membantu dalam mencapai tidur yang lebih baik. Tidur yang cukup dan berkualitas akan memberikan energi dan pemulihan yang optimal, meningkatkan konsentrasi, mood, dan produktivitas sehari-hari.</string>
+    //about
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="copyright">NightOwl merupakan sebuah aplikasi Android untuk catatan harian sebelum tidur. Aplikasi ini juga memiliki fitur pengingat tidur, jadi pengguna bisa set jam ingin tidur sesuai kebutuhan pengguna..\n\nAplikasi ini dibuat untuk kelas
+Mobpro 1. Temukan kodenya di https://github.com/Ramasanjaya22/assesment1-mopro1-nightowl\n\nCopyright © 2023 Rama Sanjaya.\nAll rights reserved.</string>
 </resources>

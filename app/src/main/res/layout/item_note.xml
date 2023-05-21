@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
+        android:textColor="@color/purple_200"
         android:text="@string/mood"/>
 
     <TextView
