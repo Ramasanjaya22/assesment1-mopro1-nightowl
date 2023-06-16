@@ -27,4 +27,6 @@
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
     <string name="copyright">NightOwl merupakan sebuah aplikasi Android untuk catatan harian sebelum tidur. Aplikasi ini juga memiliki fitur pengingat tidur, jadi pengguna bisa set jam ingin tidur sesuai kebutuhan pengguna..\n\nAplikasi ini dibuat untuk kelas
 Mobpro 1. Temukan kodenya di https://github.com/Ramasanjaya22/assesment1-mopro1-nightowl\n\nCopyright © 2023 Rama Sanjaya.\nAll rights reserved.</string>
+
+    <string name="koneksi_error">Koneksi error</string>
 </resources>

@@ -1,11 +1,16 @@
 package com.d3if3021.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.d3if3021.myapplication.data.SettingDataStore
+import com.d3if3021.myapplication.network.TebakGambarApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
