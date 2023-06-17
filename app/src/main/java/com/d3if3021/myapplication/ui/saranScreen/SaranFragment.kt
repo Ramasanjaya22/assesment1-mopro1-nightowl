@@ -1,5 +1,8 @@
 package com.d3if3021.myapplication.ui.saranScreen
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,11 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.airbnb.lottie.LottieDrawable
 import com.bumptech.glide.Glide
+import com.d3if3021.myapplication.MainActivity
 import com.d3if3021.myapplication.R
 import com.d3if3021.myapplication.databinding.FragmentSaranBinding
 import com.d3if3021.myapplication.network.ApiStatus
@@ -27,6 +33,7 @@ class SaranFragment : Fragment() {
     private lateinit var imgData: ImageView
 
     private val status = MutableLiveData<ApiStatus>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,6 +56,9 @@ class SaranFragment : Fragment() {
         tvData = view.findViewById(R.id.tvData)
         imgData = view.findViewById(R.id.imgData)
         retrieveData()
+        status.observe(viewLifecycleOwner) { apiStatus ->
+            updateProgress(apiStatus)
+        }
     }
 
     override fun onDestroyView() {
@@ -74,6 +84,9 @@ class SaranFragment : Fragment() {
                                 .into(imgData)
                         }
                         status.postValue(ApiStatus.SUCCESS)
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//                            requestNotificationPermission()
+                        }
                     } else {
                         Log.d("SaranFragment", "Failure: Response body is null")
                         status.postValue(ApiStatus.FAILED)
@@ -87,6 +100,37 @@ class SaranFragment : Fragment() {
         }
     }
     fun getStatus(): LiveData<ApiStatus> = status
+
+    private fun updateProgress(status: ApiStatus) {
+        when (status) {
+            ApiStatus.LOADING -> {
+                binding.progressBar.visibility = View.VISIBLE
+            }
+            ApiStatus.SUCCESS -> {
+                binding.progressBar.visibility = View.GONE
+            }
+            ApiStatus.FAILED -> {
+                binding.progressBar.visibility = View.GONE
+                binding.networkError.visibility = View.VISIBLE
+            }
+        }
+    }
+
+
+//    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+//    private fun requestNotificationPermission() {
+//        if (ActivityCompat.checkSelfPermission(
+//                requireContext(),
+//                Manifest.permission.POST_NOTIFICATIONS
+//            ) != PackageManager.PERMISSION_GRANTED
+//        ) {
+//            ActivityCompat.requestPermissions(
+//                requireActivity(),
+//                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+//                MainActivity.PERMISSION_REQUEST_CODE
+//            )
+//        }
+//    }
 }
 
 
