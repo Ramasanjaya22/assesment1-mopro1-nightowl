@@ -85,7 +85,7 @@ class SaranFragment : Fragment() {
                         }
                         status.postValue(ApiStatus.SUCCESS)
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-//                            requestNotificationPermission()
+                            requestNotificationPermission()
                         }
                     } else {
                         Log.d("SaranFragment", "Failure: Response body is null")
@@ -117,20 +117,20 @@ class SaranFragment : Fragment() {
     }
 
 
-//    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-//    private fun requestNotificationPermission() {
-//        if (ActivityCompat.checkSelfPermission(
-//                requireContext(),
-//                Manifest.permission.POST_NOTIFICATIONS
-//            ) != PackageManager.PERMISSION_GRANTED
-//        ) {
-//            ActivityCompat.requestPermissions(
-//                requireActivity(),
-//                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
-//                MainActivity.PERMISSION_REQUEST_CODE
-//            )
-//        }
-//    }
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    private fun requestNotificationPermission() {
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.POST_NOTIFICATIONS
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                MainActivity.PERMISSION_REQUEST_CODE
+            )
+        }
+    }
 }
 
 

@@ -32,6 +32,7 @@ class NoteFragment : Fragment() {
         val noteDao = NoteDatabase.getDatabase(requireContext()).noteDao()
         val repository = NoteRepository(noteDao)
         noteViewModel = ViewModelProvider(this, NoteViewModelFactory(repository))[NoteViewModel::class.java]
+        noteViewModel.scheduleUpdater(requireActivity().application)
 
         binding.rgMood.check(R.id.rb_happy)
         var mood = "😊" // Default value for rb_happy
